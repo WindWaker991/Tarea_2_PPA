@@ -110,7 +110,13 @@ public class Calculadora extends JFrame {
 				if (textField.getText().equals("") || textField_1.getText().equals("")) {
 					JFrame jFrame = new JFrame();
 					JOptionPane.showMessageDialog(jFrame, "Debes ingresar valores a los dos campos.");
-					// AGREGAR CONDICIONALES DE DIVISION
+				}else if (Integer.parseInt(textField_1.getText()) == 0){
+					JFrame jFrame = new JFrame();
+					JOptionPane.showMessageDialog(jFrame, "No es posible dividir por 0.");
+				}else {
+					float division = Float.parseFloat(textField.getText()) / Float.parseFloat(textField_1.getText());
+					JFrame jFrame = new JFrame();
+					JOptionPane.showMessageDialog(jFrame, "El resultado de la división es: " + division);
 				}
 			}
 		});
