@@ -39,6 +39,8 @@ public class Calculadora extends JFrame {
 	 * Create the frame.
 	 */
 	public Calculadora() {
+		setResizable(false);
+		setTitle("Calculadora");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 300, 300);
 		contentPane = new JPanel();
@@ -61,7 +63,7 @@ public class Calculadora extends JFrame {
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblSegundoNmero = new JLabel("Segundo Numero");
-		lblSegundoNmero.setBounds(50, 102, 92, 13);
+		lblSegundoNmero.setBounds(50, 102, 119, 13);
 		contentPane.add(lblSegundoNmero);
 		
 		JButton btnNewButton = new JButton("+");
@@ -71,6 +73,10 @@ public class Calculadora extends JFrame {
 					JFrame jFrame = new JFrame();
 					JOptionPane.showMessageDialog(jFrame, "Debes ingresar valores a los dos campos.");
 					// AGREGAR CONDICIONALES DE SUMA
+				}else {
+					float suma = Float.parseFloat(textField.getText()) + Float.parseFloat(textField_1.getText());
+					JFrame jFrame = new JFrame();
+					JOptionPane.showMessageDialog(jFrame, "El resultado de la suma es: " + suma);
 				}
 			}
 		});
@@ -85,6 +91,10 @@ public class Calculadora extends JFrame {
 					JFrame jFrame = new JFrame();
 					JOptionPane.showMessageDialog(jFrame, "Debes ingresar valores a los dos campos.");
 					// AGREGAR CONDICIONALES DE RESTA
+				}else {
+					float resta = Float.parseFloat(textField.getText()) - Float.parseFloat(textField_1.getText());
+					JFrame jFrame = new JFrame();
+					JOptionPane.showMessageDialog(jFrame, "El resultado de la resta es: " + resta);
 				}
 			}
 		});
@@ -98,6 +108,10 @@ public class Calculadora extends JFrame {
 					JFrame jFrame = new JFrame();
 					JOptionPane.showMessageDialog(jFrame, "Debes ingresar valores a los dos campos.");
 					// AGREGAR CONDICIONALES DE MULTIPLICACIÓN
+				}else {
+					float multiplicacion = Float.parseFloat(textField.getText()) * Float.parseFloat(textField_1.getText());
+					JFrame jFrame = new JFrame();
+					JOptionPane.showMessageDialog(jFrame, "El resultado de la multiplicacion es: " + multiplicacion);
 				}
 			}
 		});
